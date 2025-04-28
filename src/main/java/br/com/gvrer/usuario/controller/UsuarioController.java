@@ -14,9 +14,7 @@ public class UsuarioController {
 	public String cadastrar(Model model) {
 		System.out.println("olá ");
 		model.addAttribute("usuario", new Usuario());
-		return "/usuario/usuario.html";
-
-		
+		return "/usuario/usuario.html";	
 	}
 	
 	@GetMapping("/login")
