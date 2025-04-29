@@ -6,7 +6,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {
-		"br.com.gvrer.usuario.controller"
+		"br.com.gvrer.usuario.controller",		
+		"br.com.gvrer.home.controller"
 })
 public class GvrerApplication {
 
