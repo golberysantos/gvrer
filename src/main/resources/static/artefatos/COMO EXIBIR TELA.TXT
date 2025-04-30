@@ -10,6 +10,8 @@ import br.com.gvrer.usuario.model.Usuario;
 
 @Controller
 public class UsuarioController {
+
+
 	@GetMapping("/usuario/cadastrar")
 	public String cadastrar(Model model) {
 		System.out.println("olá ");
