@@ -1,5 +1,5 @@
 package br.com.gvrer.grupo.model;
 
-public class Grupo {
+public class MembroGrupo {
 
 }

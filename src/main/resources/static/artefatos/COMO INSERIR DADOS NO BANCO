@@ -1,0 +1,38 @@
+
+/*-----------------------
+-- COMO INSERIR DADOS
+-------------------------/* 
+
+
+
+package br.com.criaps.cadprojeto.service;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import org.springframework.stereotype.Service;
+
+import br.com.criaps.cadprojeto.model.Projeto;
+import br.com.criaps.config.ConexaoConfig;
+
+@Service
+public class CadProjetoService {
+
+	public int criar(Projeto projeto) throws SQLException {
+
+		ConexaoConfig cnx = new ConexaoConfig();
+		Connection cnctn = cnx.conectar();
+		// cnctn.setAutoCommit(false);
+		Statement stmt = cnctn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+
+		String query = "insert into projeto\r\n" + "(nomeprojeto, descricaoprojeto, qtdparticipantes)\r\n" + "value\r\n"
+				+ "('" + projeto.getNomeprojeto() + "', '" + projeto.getDescricaoprojeto() + "', '"
+				+ projeto.getQtdparticipantes() + "')";
+
+		return stmt.executeUpdate(query);
+
+	}
+
+}
