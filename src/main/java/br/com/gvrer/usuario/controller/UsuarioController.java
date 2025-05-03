@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.gvrer.usuario.model.Usuario;
 
@@ -14,22 +13,21 @@ public class UsuarioController {
 	public String cadastrar(Model model) {
 		System.out.println("olá ");
 		model.addAttribute("usuario", new Usuario());
-		return "/usuario/usuario.html";	
+		return "/usuario/usuario.html";
 	}
-	
+
 	@GetMapping("/login")
 	public String login(Model model) {
 		System.out.println("olá ");
 		model.addAttribute("usuario", new Usuario());
-		return "/usuario/login.html";		
+		return "/usuario/login.html";
 	}
-	
+
 	@PostMapping("/usuario/salvar")
-	  public void salvar(Model model) {
-	    // model.addAttribute("loginError", true);
-	    //return "login.html";
+	public void salvar(Model model) {
+		// model.addAttribute("loginError", true);
+		// return "login.html";
 		System.out.println("\nFOI");
-	  }
-	
-	
+	}
+
 }

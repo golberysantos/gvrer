@@ -25,6 +25,16 @@ LOCK TABLES `bairro` WRITE;
 UNLOCK TABLES;
 
 --
+-- Dumping data for table `categoriadaempresa`
+--
+
+LOCK TABLES `categoriadaempresa` WRITE;
+/*!40000 ALTER TABLE `categoriadaempresa` DISABLE KEYS */;
+INSERT INTO `categoriadaempresa` VALUES (1,'Tecnologia da Informação','Soluções inovadoras para empresas que querem crescer com tecnologia','Desenvolvimento de Software',1,1);
+/*!40000 ALTER TABLE `categoriadaempresa` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping data for table `categoriaitem`
 --
 
@@ -40,6 +50,16 @@ UNLOCK TABLES;
 LOCK TABLES `cidade` WRITE;
 /*!40000 ALTER TABLE `cidade` DISABLE KEYS */;
 /*!40000 ALTER TABLE `cidade` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `contato`
+--
+
+LOCK TABLES `contato` WRITE;
+/*!40000 ALTER TABLE `contato` DISABLE KEYS */;
+INSERT INTO `contato` VALUES (1,1);
+/*!40000 ALTER TABLE `contato` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -130,6 +150,16 @@ INSERT INTO `grupo` VALUES (1,'Viagem para Curitiba','viagem-para-curitiba/KSHS5
 UNLOCK TABLES;
 
 --
+-- Dumping data for table `horariodefuncionamento`
+--
+
+LOCK TABLES `horariodefuncionamento` WRITE;
+/*!40000 ALTER TABLE `horariodefuncionamento` DISABLE KEYS */;
+INSERT INTO `horariodefuncionamento` VALUES (1,'Seg-Sex','08:00:00','21:00:00','Em funcionamento',1,1);
+/*!40000 ALTER TABLE `horariodefuncionamento` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping data for table `horariodisponivel`
 --
 
@@ -165,6 +195,16 @@ UNLOCK TABLES;
 LOCK TABLES `itinerario_destino` WRITE;
 /*!40000 ALTER TABLE `itinerario_destino` DISABLE KEYS */;
 /*!40000 ALTER TABLE `itinerario_destino` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `juridica`
+--
+
+LOCK TABLES `juridica` WRITE;
+/*!40000 ALTER TABLE `juridica` DISABLE KEYS */;
+INSERT INTO `juridica` VALUES (1,'TechNova Soluções em Tecnologia LTDA','TechNova','12.345.678/0001-99',1);
+/*!40000 ALTER TABLE `juridica` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -231,7 +271,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `pessoa` WRITE;
 /*!40000 ALTER TABLE `pessoa` DISABLE KEYS */;
-INSERT INTO `pessoa` VALUES (1,'2000-04-11 04:00:00'),(2,'2000-04-12 04:00:00');
+INSERT INTO `pessoa` VALUES (1,'1984-01-01 00:00:00');
 /*!40000 ALTER TABLE `pessoa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -293,6 +333,16 @@ INSERT INTO `statususuario` VALUES (1,'Ativo'),(2,'Pendente'),(3,'Inativo');
 UNLOCK TABLES;
 
 --
+-- Dumping data for table `tipodecontato`
+--
+
+LOCK TABLES `tipodecontato` WRITE;
+/*!40000 ALTER TABLE `tipodecontato` DISABLE KEYS */;
+INSERT INTO `tipodecontato` VALUES (1,'Telefone',1);
+/*!40000 ALTER TABLE `tipodecontato` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping data for table `tiposegmento`
 --
 
@@ -321,4 +371,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-22 20:29:00
+-- Dump completed on 2025-05-02 21:11:45

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br"  xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -61,18 +61,27 @@
 
                 <div class="form">
                     <h1>Cadastro Cardápio</h1>
-                    <form class="row g-3 ">
-
+                    <form 
+                    	class="row g-3" 
+                    	action="#" 
+                    	th:action="@{/itemrestaurante/salvar}" 
+                    	th:object="${itemrestaurante}" 
+                    	method="post"
+                    >
                         <div class="col-12">
-                            <label for="inputnome" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="inputnome" placeholder="Nome">
+                            <label for="nomeitem" class="form-label">Nome</label>
+                            <input type="text" class="form-control" 
+                            	id="nomeitem" name="nomeitem" 
+                            	placeholder="Nome" 
+                            	th:field="*{nomeitem}"
+                            >
                         </div>
                         <div class="col-12">
-                            <label for="inputingredientes" class="form-label">Ingredientes</label>
-                            <input type="text" class="form-control" id="inputingredientes" placeholder="Ingredientes">
+                            <label for="ingredientes" class="form-label">Ingredientes</label>
+                            <input type="text" class="form-control" id="ingredientes" name="ingredientes" placeholder="Informe os ingredientes..." th:field="*{ingredientes}">
                         </div>
                         <div class="col-12">
-                            <label for="inputespecialidades2" class="form-label">especialidades</label>
+                            <label for="inputespecialidades2" class="form-label">Especialidades</label>
                             <input type="text" class="form-control" id="inputespecialidades2" placeholder="">
                         </div>
                         <div class="col-12">
@@ -80,18 +89,30 @@
                             <input type="text" class="form-control" id="inputorigem">
                         </div>
                         <div class="col-12">
-                            <label for="inputdescrição" class="form-label">Descrição</label>
-                            <input type="text" class="form-control" id="inputdescrição">
+                            <label for="descricao" class="form-label">Descrição</label>
+                            <input 
+                            	type="text" 
+                            	class="form-control" 
+                            	id="descricao" 
+                            	name="descricao" 
+                            	placeholder="descrição..." 
+                            	th:field="*{nomeitem}"
+                            >
                         </div>
                         <div class="col-12">
-                            <label for="inputvalor" class="form-label">Valor</label>
-                            <input type="text" class="form-control" id="inputvalor">
+                            <label for="valor" class="form-label">Valor</label>
+                            <input 
+                            	type="text" 
+                            	class="form-control" 
+                            	id="valor"
+                            	name="valor"
+                            	placeholder="valor..."
+                            	th:field="*{valor}"                            	
+                            >
                         </div>
-
-
                         <div class="col-12 pb-2">
                             <button type="submit" class="btn btn-primary">
-                                <a class="a1" href="../cardapio/menu.html">Salvar</a>
+                                <span class="a1">Salvar</span>
                             </button>
                         </div>
                     </form>

@@ -6,12 +6,11 @@ import org.springframework.data.relational.core.mapping.Table;
 @Table
 public class Usuario {
 	@Id
-	private long usuarioid;
-	private String nickname; 
-	private String senha;
+	private long usuarioid; 
+	private String nickname;
+	private String senha; 
 	private long pessoa_pessoaid; 
 	private long statususuario_statususuarioid;
-	
 	public long getUsuarioid() {
 		return usuarioid;
 	}
@@ -42,5 +41,6 @@ public class Usuario {
 	public void setStatususuario_statususuarioid(long statususuario_statususuarioid) {
 		this.statususuario_statususuarioid = statususuario_statususuarioid;
 	}
+	
 	
 }
