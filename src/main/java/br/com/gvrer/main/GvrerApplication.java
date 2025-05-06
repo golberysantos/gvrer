@@ -6,11 +6,13 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {
+		"br.com.gvrer.config",		
 		"br.com.gvrer.usuario.controller",		
 		"br.com.gvrer.home.controller",
 		"br.com.gvrer.itinerario.controller",
 		"br.com.gvrer.grupo.controller",
-		"br.com.gvrer.itemrestaurante.controller"
+		"br.com.gvrer.itemrestaurante.controller",
+		"br.com.gvrer.itemrestaurante.service"
 })
 public class GvrerApplication {
 

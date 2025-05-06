@@ -78,16 +78,40 @@
                         </div>
                         <div class="col-12">
                             <label for="ingredientes" class="form-label">Ingredientes</label>
-                            <input type="text" class="form-control" id="ingredientes" name="ingredientes" placeholder="Informe os ingredientes..." th:field="*{ingredientes}">
+                            <input type="text" class="form-control" 
+                            	id="ingredientes" name="ingredientes" 
+                            	placeholder="Informe os ingredientes..." 
+                            	th:field="*{ingredientes}"                            	
+                            >
                         </div>
                         <div class="col-12">
-                            <label for="inputespecialidades2" class="form-label">Especialidades</label>
-                            <input type="text" class="form-control" id="inputespecialidades2" placeholder="">
+                            <label for="especialidadedoitem_nomeespecialidadedoitem" class="form-label">Especialidades</label>                          
+                            <select class="form-select" aria-label="Selecione uma opção..."
+                            	id="especialidadedoitem_nomeespecialidadedoitem"
+                            	name="especialidadedoitem_nomeespecialidadedoitem"
+                            	th:field="*{especialidadedoitem_nomeespecialidadedoitem}"
+                            >
+							    <option th:value="1" >COMIDA PORTUGUESA</option>
+							    <option th:value="2" >BACALHAO DO PORTO</option>
+							    <option th:value="3" >BATATA RUSTICA</option>
+							    <option th:value="4" >BACALHAO A PORTUGUESA</option>
+							</select>
                         </div>
+                        
                         <div class="col-12">
-                            <label for="inputorigem" class="form-label">Origem</label>
-                            <input type="text" class="form-control" id="inputorigem">
+                            <label for="origemitemrestaurante_origemrestauranteid" class="form-label">Origem</label>                          
+                            <select class="form-select" aria-label="Selecione uma opção..."
+                            	id="origemitemrestaurante_origemrestauranteid"
+                            	name="origemitemrestaurante_origemrestauranteid"
+                            	th:field="*{origemitemrestaurante_origemrestauranteid}"
+                            >
+							    <option th:value="1" >AZEITE</option>
+							    <option th:value="2" >PORTUGUES</option>
+							    <option th:value="3" >GALO</option>
+							    <option th:value="4" >BACALHAO</option>
+							</select>
                         </div>
+                        
                         <div class="col-12">
                             <label for="descricao" class="form-label">Descrição</label>
                             <input 
@@ -95,8 +119,8 @@
                             	class="form-control" 
                             	id="descricao" 
                             	name="descricao" 
-                            	placeholder="descrição..." 
-                            	th:field="*{nomeitem}"
+                            	placeholder="" 
+                            	th:field="*{descricao}"
                             >
                         </div>
                         <div class="col-12">
