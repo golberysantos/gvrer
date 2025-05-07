@@ -10,7 +10,7 @@ public class Itemrestaurante {
 	private String nomeitem;
 	private String ingredientes; 
 	private String descricao; 
-	private String valor; 
+	private float valor; 
 	private String imagemitem; 
 	private long origemitemrestaurante_origemrestauranteid; 
 	private long especialidadedoitem_nomeespecialidadedoitem;
@@ -40,12 +40,7 @@ public class Itemrestaurante {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public String getValor() {
-		return valor;
-	}
-	public void setValor(String valor) {
-		this.valor = valor;
-	}
+
 	public String getImagemitem() {
 		return imagemitem;
 	}
@@ -64,5 +59,13 @@ public class Itemrestaurante {
 	public void setEspecialidadedoitem_nomeespecialidadedoitem(long especialidadedoitem_nomeespecialidadedoitem) {
 		this.especialidadedoitem_nomeespecialidadedoitem = especialidadedoitem_nomeespecialidadedoitem;
 	}
+	public float getValor() {
+		return valor;
+	}
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
+	
+	
 
 }
