@@ -3,20 +3,27 @@ package br.com.gvrer.itinerario.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import br.com.gvrer.usuario.model.Usuario;
+import br.com.gvrer.itinerario.model.Itinerario;
 
 @Controller
-public class ItinerarioController {
+public class ItinerarioController {	
 
-	@GetMapping("/itinerario/lista")
-	public String itinerario(Model model) {
-		System.out.println("olá ");
-		//model.addAttribute("itinerario", new Itinerario());
-		return "/itinerario/listaItinerario.html";
-
-	}
+		@GetMapping("/itinerario/cadastrar")
+		public String cadastrar(Model model) {
+			
+			model.addAttribute("itinerario", new Itinerario());
+			return "/itinerario/itinerario.html";	
+		}
+		
+		@PostMapping("/itinerario/salvar")
+		public String salvar( @ModelAttribute Itinerario itinerario,   Model model) {
+		
+			System.out.println("DADOS: "+ itinerario.getNomeitinerario());
+			
+			return "/itinerario/itinerario.html";	
+		}
 	
-
 }

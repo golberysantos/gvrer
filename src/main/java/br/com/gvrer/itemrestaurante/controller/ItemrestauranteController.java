@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.com.gvrer.itemrestaurante.model.Itemrestaurante;
-import br.com.gvrer.itemrestaurante.service.ItemrestauranteService;
+import br.com.gvrer.itemrestaurante.repository.ItemrestauranteRepository;
 
 @Controller
 public class ItemrestauranteController {
@@ -31,7 +31,7 @@ public class ItemrestauranteController {
 		System.out.println("Valor: "+itemrestaurante.getValor());
 				System.out.println("\n");
 				
-		var irs = new ItemrestauranteService();
+		var irs = new ItemrestauranteRepository();
 		irs.criar(itemrestaurante);
 		return "/cardapio/menu.html";
 	}
