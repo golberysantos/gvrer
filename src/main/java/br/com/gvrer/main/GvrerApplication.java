@@ -11,7 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
 		"br.com.gvrer.home.controller",
 		"br.com.gvrer.itinerario.controller",
 		"br.com.gvrer.grupo.controller",
-		"br.com.gvrer.itemrestaurante.controller"
+		"br.com.gvrer.itemrestaurante.controller",
+		"br.com.gvrer.categoriaitem.controller"
 		
 })
 public class GvrerApplication {
