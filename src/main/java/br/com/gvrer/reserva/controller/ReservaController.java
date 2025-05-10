@@ -24,16 +24,11 @@ public class ReservaController {
 	@PostMapping("/reserva/salvar")
 	public String salvar(@ModelAttribute Reserva reserva, Model model) throws SQLException {		
 		System.out.println("\n");
-		System.out.println("Nome do Item: "+itemrestaurante.getNomeitem());
-		System.out.println("Ingredientes: "+itemrestaurante.getIngredientes());
-		System.out.println("Especialidade: "+itemrestaurante.getEspecialidadedoitem_nomeespecialidadedoitem());
-		System.out.println("Origem: "+itemrestaurante.getOrigemitemrestaurante_origemrestauranteid());
-		System.out.println("Descrição: "+itemrestaurante.getDescricao());
-		System.out.println("Valor: "+itemrestaurante.getValor());
+		System.out.println("Data: "+reserva.getDatareserva());
+		System.out.println("Horário da reserva: "+reserva.getHorarioreserva());
+		System.out.println("Mesa: "+reserva.getMesa_mesaid());
 				System.out.println("\n");
-				
-		var irs = new ReservaRepository();
-		irs.criar(reserva);
+
 		return "/cardapio/menu.html";
 	}
 	

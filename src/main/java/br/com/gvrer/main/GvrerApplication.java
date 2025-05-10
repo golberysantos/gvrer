@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = {
 		"br.com.gvrer.config",		
+		"br.com.gvrer.juridica.controller",
 		"br.com.gvrer.usuario.controller",		
 		"br.com.gvrer.home.controller",
 		"br.com.gvrer.itinerario.controller",
