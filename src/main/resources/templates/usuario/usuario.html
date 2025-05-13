@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Usuário</title>
+    <title>Novo Usuário</title>
 
     <link
       rel="stylesheet"
@@ -66,12 +66,15 @@
         </div>
       </nav>
     </header>
+
     <main>
       <div class="container al">
         <form
-          th:action="@{/usuario/salvar}" 
-          method="post"          
-          class="mt-3 mb-3 col-md-6 login border border-4 rounded"
+        	class="mt-3 mb-3 col-md-6 login border border-4 rounded"
+       		action="#"
+ 		  	th:action="@{/usuario/criarconta}" 
+ 		  	th:object="${usuario}" 
+ 		  	method="post"
         >
           <div class="card p-3">
             <div><h2 class="mt-2 mb-4">Cadastro de Usuário</h2></div>
@@ -79,13 +82,15 @@
               <label for="usuario" class="form-label"
                 >Usuário (E-mail ou celular)</label
               >
-              <input
-                type="text"
-                class="form-control validar"
-                name="usuario"
-                id="usuario"
-                required
-              />
+             <input
+               type="text"
+               class="form-control validar"
+               name="nickname"
+               placeholder="Usuário"
+               id="nickname"
+               th:field="*{nickname}"
+               required
+             />
             </div>
             <div class="mb-3">
               <label for="senha" class="form-label">Senha</label>
@@ -94,9 +99,11 @@
                 class="form-control"
                 name="senha"
                 id="senha"
+                placeholder="Senha"
+                th:field="*{senha}"
                 required
               />
-              <p class="fas fa-eye eye-icon" id="togglePassword"></p>
+              <p class="fas fa-eye eye-icon" id="togglePassword" onclick="togglePasswordVisibility()"></p>
               <div class="mt-2">
                 <div class="form-check">
                   <input
@@ -104,6 +111,7 @@
                     type="checkbox"
                     value=""
                     id="termosDeUso"
+                    required
                   />
                   <p>
                     Li e estou de acordo com os
@@ -119,18 +127,18 @@
             </div>
             <div class="mb-3">
               <button
-                onclick="enviar()"
                 type="submit"
                 id="button"
                 class="btn btn-dark col-12"
               >
-                Criar conta
+                <span>Criar conta</span>
               </button>
             </div>
           </div>
         </form>
       </div>
     </main>
+
     <footer class="text-center bgColor">
       <div class="text-center footerBgColor p-3">
         <p class="p">&copy; Gvrer | By Renan</p>
@@ -143,6 +151,19 @@
     <script src="../static/js/validarInput.js"></script>
     <script src="../static/js/redirecionarParaOutraPagina.js"></script>
     <script>
+      // Função para alternar a visibilidade da senha
+      function togglePasswordVisibility() {
+        var senhaField = document.getElementById('senha');
+        var eyeIcon = document.getElementById('togglePassword');
+        if (senhaField.type === "password") {
+          senhaField.type = "text";
+          eyeIcon.classList.add('fa-eye-slash');
+        } else {
+          senhaField.type = "password";
+          eyeIcon.classList.remove('fa-eye-slash');
+        }
+      }
+
       function enviar() {
         if (validar()) {
           abrirEmOutraAba("../home/home.html");
@@ -150,7 +171,7 @@
           Swal.fire({
             title: "Opps!",
             text: "preencha os espaços em branco",
-            icon: "dunger",
+            icon: "error",
             confirmButtonColor: "#FF385C",
           });
         }

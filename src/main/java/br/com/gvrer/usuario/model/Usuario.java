@@ -3,7 +3,7 @@ package br.com.gvrer.usuario.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table
+@Table("usuario")
 public class Usuario {
 	@Id
 	private long usuarioid; 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Contatos -->
+<h3>Cadastre o seu contato</h3>
+<p>Informe pelo menos um meio de contato*</p>
+
+<div class="input-group">
+    <label for="telefone">Telefone Fixo:</label>
+    <input type="tel" id="telefone" name="telefone" placeholder="(00) 0000-0000">
+</div>
+
+<div class="input-group">
+    <label for="celular">Celular*:</label>
+    <input type="tel" id="celular" name="celular" required placeholder="(00) 00000-0000">
+</div>
+
+<div class="input-group">
+    <label for="email">E-mail Corporativo*:</label>
+    <input type="email" id="email" name="email" required placeholder="exemplo@empresa.com">
+</div>
+
+<div class="input-group">
+    <label for="site">Website:</label>
+    <input type="url" id="site" name="site" placeholder="https://www.exemplo.com.br">
+</div>
+
+<div class="input-group">
+    <label for="responsavel-contato">Responsável pelo contato:</label>
+    <input type="text" id="responsavel-contato" name="responsavel-contato" placeholder="Nome da pessoa">
+</div>
+
+<div>
+    <button id="button" type="submit">Avançar</button>
+</div>
+
+</body>
+
+</html>

@@ -14,17 +14,16 @@ import br.com.gvrer.itemrestaurante.model.Itemrestaurante;
 import br.com.gvrer.itemrestaurante.repository.ItemrestauranteRepository;
 
 @Controller
-public class GrupoController {
-	@GetMapping("/grupo/cadastrar")
-	public String cadastrar(Model model) {
-		System.out.println("olá ");
+public class ListaDosUsuariosDoGrupoController {
+	@GetMapping("/listadosusuariosdogrupo/listar")
+	public String listar(Model model) {
 		model.addAttribute("grupo", new Grupo());
-		return "grupo/cadastrarGrupo.html";
+		return "grupo/listadosusuariosdogrupo.html";
 
 	}
 	
-	@PostMapping("/grupo/salvar")
-	public String salvar(@ModelAttribute Grupo grupo, Model model) throws SQLException {		
+	@PostMapping("/zzz/zzz")
+	public String zzz(@ModelAttribute Grupo grupo, Model model) throws SQLException {		
 		System.out.println("\n");
 		System.out.println("Nome do Grupo: "+grupo.getNomegrupo());
 		System.out.println("Orçamento Total: "+grupo.getOrcamanetototal());

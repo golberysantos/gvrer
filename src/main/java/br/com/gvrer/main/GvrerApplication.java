@@ -13,7 +13,8 @@ import org.springframework.context.annotation.ComponentScan;
 		"br.com.gvrer.itinerario.controller",
 		"br.com.gvrer.grupo.controller",
 		"br.com.gvrer.itemrestaurante.controller",
-		"br.com.gvrer.categoriaitem.controller"
+		"br.com.gvrer.categoriaitem.controller",
+		"br.com.gvrer.pessoa.controller"
 		
 })
 public class GvrerApplication {

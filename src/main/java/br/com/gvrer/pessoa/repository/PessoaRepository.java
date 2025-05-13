@@ -8,14 +8,13 @@ import java.sql.Statement;
 import org.springframework.stereotype.Service;
 
 import br.com.gvrer.config.ConexaoConfig;
-import br.com.gvrer.itemrestaurante.model.Itemrestaurante;
 import br.com.gvrer.pessoa.service.PessoaDTO;
 
 @Service
 public class PessoaRepository {
 	public int criar(PessoaDTO pessoaDTO) throws SQLException {
 
-		ConexaoConfig cnx = new ConexaoConfig();
+		ConexaoConfig cnx = new ConexaoConfig();	
 		Connection cnctn = cnx.conectar();
 		// cnctn.setAutoCommit(false);
 		Statement stmt = cnctn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);

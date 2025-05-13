@@ -1,4 +1,4 @@
-package br.com.gvrer.itemrestaurante.repository;
+package br.com.gvrer.endereco.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

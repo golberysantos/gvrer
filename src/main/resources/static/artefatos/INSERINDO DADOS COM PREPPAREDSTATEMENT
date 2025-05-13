@@ -1,0 +1,19 @@
+INSERINDO DADOS COM PREPPAREDSTATEMENT
+
+
+String sql = "INSERT INTO users (nome, email, idade) VALUES (?, ?, ?)";
+PreparedStatement stmt = connection.prepareStatement(sql);
+stmt.setString(1, "João Silva");    // 1º parâmetro (nome). Métodos `setTipo()` (onde `Tipo` é o tipo do dado):
+stmt.setString(2, "joao@email.com"); // 2º parâmetro (email)
+stmt.setInt(3, 30);                 // 3º parâmetro (idade)
+
+int linhasAfetadas = stmt.executeUpdate();
+System.out.println(linhasAfetadas + " linhas modificadas.");
+
+ResultSet rs = stmt.executeQuery();
+  while (rs.next()) {
+      System.out.println(rs.getString("nome"));
+  }
+
+stmt.close(); // Ou use try-with-resources (recomendado). Fechando o recurso (importante!)
+

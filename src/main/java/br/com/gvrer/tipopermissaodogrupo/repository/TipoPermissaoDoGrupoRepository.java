@@ -1,4 +1,4 @@
-package br.com.gvrer.itemrestaurante.repository;
+package br.com.gvrer.tipopermissaodogrupo.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +10,7 @@ import br.com.gvrer.config.ConexaoConfig;
 import br.com.gvrer.itemrestaurante.model.Itemrestaurante;
 
 @Service
-public class ItemrestauranteRepository {
+public class TipoPermissaoDoGrupoRepository {
 	public int criar(Itemrestaurante itemrestaurante) {
 
 		ConexaoConfig cnx = new ConexaoConfig();
