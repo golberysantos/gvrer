@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import br.com.gvrer.grupo.model.Grupo;
 import br.com.gvrer.grupo.repository.GrupoRepository;
-import br.com.gvrer.itemrestaurante.model.Itemrestaurante;
-import br.com.gvrer.itemrestaurante.repository.ItemrestauranteRepository;
 
 @Controller
 public class GrupoController {

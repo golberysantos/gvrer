@@ -10,29 +10,29 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.com.gvrer.juridica.model.Juridica;
-import br.com.gvrer.pessoa.repository.PessoaRepository;
-import br.com.gvrer.pessoa.service.PessoaDTO;
+import br.com.gvrer.juridica.repository.JuridicaRepository;
+import br.com.gvrer.juridica.service.JuridicaDTO;
 
 @Controller
 public class JuridicaController {
 	
 	@GetMapping("/juridica/cadastrar")
 	public String cadastrar(Model model) {
-		model.addAttribute("pessoaDTO", new PessoaDTO());
+		model.addAttribute("juridicaDTO", new JuridicaDTO());
 		return "juridica/dadosjuridica.html";
 	}
 	
 	@PostMapping("/juridica/salvar")
-	public String salvar(@ModelAttribute PessoaDTO pessoaDTO, Model model) {
-		System.out.println("Nome do Responsável: "+pessoaDTO.getRepresentante());		
-		System.out.println("Razão Social: "+pessoaDTO.getRazaosocial());
-		System.out.println("Nome Fantasia: "+pessoaDTO.getNomefantasia());
-		System.out.println("CNPJ: "+pessoaDTO.getCnpj());
+	public String salvar(@ModelAttribute JuridicaDTO juridicaDTO, Model model) {
+		System.out.println("Nome do Responsável: "+juridicaDTO.getRepresentante());		
+		System.out.println("Razão Social: "+juridicaDTO.getRazaosocial());
+		System.out.println("Nome Fantasia: "+juridicaDTO.getNomefantasia());
+		System.out.println("CNPJ: "+juridicaDTO.getCnpj());
 		
-		var pdto = new PessoaRepository();
+		var pdto = new JuridicaRepository();
 		
 		try {
-			pdto.criar(pessoaDTO);
+			pdto.cadastrar(juridicaDTO);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -12,7 +12,7 @@ public class Grupo {
 	private long grupoid;
 	private String nomegrupo;
 	private String linkgrupo;
-	private double orcamanetototal;
+	private Double orcamanetototal;
 	private Timestamp datacriacao;
 	private Timestamp dataviagem;
 	private String descricao;
@@ -36,10 +36,10 @@ public class Grupo {
 	public void setLinkgrupo(String linkgrupo) {
 		this.linkgrupo = linkgrupo;
 	}
-	public double getOrcamanetototal() {
+	public Double getOrcamanetototal() {
 		return orcamanetototal;
 	}
-	public void setOrcamanetototal(double orcamanetototal) {
+	public void setOrcamanetototal(Double orcamanetototal) {
 		this.orcamanetototal = orcamanetototal;
 	}
 	public Timestamp getDatacriacao() {
@@ -66,9 +66,6 @@ public class Grupo {
 	public void setQtdparticipantes(long qtdparticipantes) {
 		this.qtdparticipantes = qtdparticipantes;
 	}
-	
-	
-	
-	
+
 	
 }

@@ -10,9 +10,12 @@ import br.com.gvrer.config.ConexaoConfig;
 import br.com.gvrer.grupo.model.Grupo;
 
 import java.sql.Timestamp;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Locale;
 
 @Service
 public class GrupoRepository {
@@ -29,11 +32,7 @@ public class GrupoRepository {
 		LocalDate localDate = LocalDate.of(2025, 5, 10);
 		LocalDateTime localDateTime = localDate.atStartOfDay();
 		Timestamp timestamp = Timestamp.valueOf(localDateTime);
-
-		//float preco = Float.parseFloat(grupo.getOrcamanetototal());
-
 		
-
 		try {
 
 			String query = "insert into grupo"
