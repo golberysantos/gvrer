@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class PrincipalController {
-	@GetMapping({"/principal", "/"})
+	@GetMapping({"/principal"})
 	public String principal(Model model) {
 		System.out.println("olá ");
 		return "/principal/principal.html";	

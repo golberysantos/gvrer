@@ -33,14 +33,14 @@ public class UsuarioController {
 
 		// cria uma nova pessoa
 		Pessoa pessoa = new Pessoa();
-
+//pessoa.setDatanascimento("");
 		System.out.println("pessoa datanascimetno: \n" + pessoa.getDatanascimento());
 		PessoaRepository pr = new PessoaRepository();
 		pessoa = pr.criar(pessoa);
 
 		// cria um novo usuário
 		usuario.setPessoa_pessoaid(pessoa.getPessoaid());
-		usuario.setStatususuario_statususuarioid(3);
+		usuario.setStatususuario_statususuarioid(1);
 		var ucr = new UsuarioRepository();
 		ucr.criar(usuario);
 
@@ -48,7 +48,7 @@ public class UsuarioController {
 
 	}
 
-	@GetMapping("/usuaio/login")
+	@GetMapping("/usuario/login")
 	public String login(Model model) {
 		System.out.println("olá >>>>> ");
 		model.addAttribute("usuario", new Usuario());
@@ -61,5 +61,6 @@ public class UsuarioController {
 		return "login.html";
 
 	}
+	
 
 }

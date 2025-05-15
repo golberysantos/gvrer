@@ -22,10 +22,4 @@ public class TipoSegmentoController {
 		return "/tiposegmento/tiposegmento.html";
 	}
 	
-	@PostMapping("/tiposegmento/cadastrar")
-	public String salvar(@ModelAttribute TipoSegmento tiposegmento, Model model) throws SQLException {		
-		System.out.println("\n");
-		
-		return "/tiposegmento/tiposegmento.htmll";
-}
 }

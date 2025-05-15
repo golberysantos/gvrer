@@ -18,26 +18,27 @@ public class JuridicaController {
 	
 	@GetMapping("/juridica/cadastrar")
 	public String cadastrar(Model model) {
-		model.addAttribute("juridicaDTO", new JuridicaDTO());
+		model.addAttribute("juridicaDTO", new Juridica());
 		return "juridica/dadosjuridica.html";
 	}
 	
 	@PostMapping("/juridica/salvar")
-	public String salvar(@ModelAttribute JuridicaDTO juridicaDTO, Model model) {
-		System.out.println("Nome do Responsável: "+juridicaDTO.getRepresentante());		
-		System.out.println("Razão Social: "+juridicaDTO.getRazaosocial());
-		System.out.println("Nome Fantasia: "+juridicaDTO.getNomefantasia());
-		System.out.println("CNPJ: "+juridicaDTO.getCnpj());
+	public String salvar(@ModelAttribute Juridica juridica, Model model) throws Exception {
+		System.out.println("Nome do Responsável: "+juridica.getRepresentante());		
+		System.out.println("Razão Social: "+juridica.getRazaosocial());
+		System.out.println("Nome Fantasia: "+juridica.getNomefantasia());
+		System.out.println("CNPJ: "+juridica.getCnpj());
 		
 		var pdto = new JuridicaRepository();
 		
 		try {
-			pdto.cadastrar(juridicaDTO);
+			pdto.cadastrar(juridica);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		return "home/home.html";
+		
 	}
 }

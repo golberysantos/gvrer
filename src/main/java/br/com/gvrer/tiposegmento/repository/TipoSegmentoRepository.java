@@ -10,7 +10,7 @@ import br.com.gvrer.config.ConexaoConfig;
 import br.com.gvrer.itemrestaurante.model.Itemrestaurante;
 
 @Service
-public class ItemrestauranteRepository {
+public class TipoSegmentoRepository {
 	public int criar(Itemrestaurante itemrestaurante) {
 
 		ConexaoConfig cnx = new ConexaoConfig();
