@@ -63,37 +63,26 @@
                     <h1>Endereço</h1>
                     <form 
                     	class="row g-3" 
-                    	action="#" 
-                    	th:action="@{/endereço/salvar}" 
-                    	th:object="${nomedarua}" 
-                    	method="post"
+                        action="#"
+               th:action="@{/endereco/cadastrar}" 
+               th:object="${endereco}" 
+               method="post"
                     >
                         <div class="col-12">
-                            <label for="nomerua" class="form-label">Rua</label>
-                            <input type="text" class="form-control" 
-                            	id="nomerua" name="nomerua" 
-                            	placeholder="rua" 
-                            	th:field="*{nomeitem}"
-                            >
+                           <label for="nomeRua" class="form-label">Rua</label>
+<input type="text" th:field="*{rua}" placeholder="Rua">
+
+
                         </div>
                         <div class="col-12">
                             <label for="bairro" class="form-label">Complemento</label>
-                            <input type="text" class="form-control" 
-                            	id=bairro" name="bairro" 
-                            	placeholder="Informe o bairro..." 
-                            	th:field="*{bairro}"                            	
-                            >
+<input type="text" th:field="*{complemento}" placeholder="Complemento">
+
                         </div>
                         <div class="col-12">
-                            <label for="valor" class="form-label">Numero</label>
-                            <input 
-                            	type="text" 
-                            	class="form-control" 
-                            	id="\Numerodacasa"
-                            	name="Numerodacasa"
-                            	placeholder="Numerodacasa..."
-                            	th:field="*{Numerodacasa}"                            	
-                            >
+                            <label for="numeroDaCasa" class="form-label">Numero</label>
+<input type="text" th:field="*{numero}" placeholder="Número">
+
                         </div>
                         <div class="col-12 pb-2">
                             <button type="submit" class="btn btn-primary">

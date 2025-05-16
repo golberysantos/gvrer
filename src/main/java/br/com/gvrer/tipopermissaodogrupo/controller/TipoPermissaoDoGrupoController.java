@@ -16,11 +16,9 @@ import br.com.gvrer.tipopermissaodogrupo.model.TipoPermissaoDoGrupo;
 public class TipoPermissaoDoGrupoController {
 	@GetMapping("/tipopermissaodogrupo/cadastrar")
 	public String cadastrar(Model model) {
-		System.out.println("/cardapio/itemrestaurante.html ");
-		model.addAttribute("tipoPermissaoDoGrupo", new TipoPermissaoDoGrupo());
-		return "/grupo/tipopermissaodogrupo.html";
+	    model.addAttribute("tipopermissaodogrupo", new TipoPermissaoDoGrupo());
+	    return "/grupo/telaconfiguracaodogrupo.html";
 	}
-	
 	@PostMapping("/tipopermissaodogrupo/salvar")
 	public String salvar(@ModelAttribute Itemrestaurante itemrestaurante, Model model) throws SQLException {		
 		System.out.println("\n");

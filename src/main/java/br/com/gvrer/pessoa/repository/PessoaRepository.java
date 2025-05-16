@@ -20,7 +20,6 @@ public class PessoaRepository {
 		
 		// cnctn.setAutoCommit(false);
 		//Statement stmt = cnctn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-
 		
 		try {
 	        String query = "INSERT INTO pessoa (datanascimento) VALUE (?)";

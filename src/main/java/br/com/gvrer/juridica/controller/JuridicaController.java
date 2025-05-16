@@ -2,7 +2,6 @@ package br.com.gvrer.juridica.controller;
 
 import java.sql.SQLException;
 
-import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,16 +22,16 @@ public class JuridicaController {
 	}
 	
 	@PostMapping("/juridica/salvar")
-	public String salvar(@ModelAttribute Juridica juridica, Model model) throws Exception {
-		System.out.println("Nome do Responsável: "+juridica.getRepresentante());		
-		System.out.println("Razão Social: "+juridica.getRazaosocial());
-		System.out.println("Nome Fantasia: "+juridica.getNomefantasia());
-		System.out.println("CNPJ: "+juridica.getCnpj());
-		
+	public String salvar(@ModelAttribute JuridicaDTO juridicaDTO, Model model) throws Exception {
+		System.out.println("Nome do Responsável: "+juridicaDTO.getRepresentante());		
+		System.out.println("Razão Social: "+juridicaDTO.getRazaosocial());
+		System.out.println("Nome Fantasia: "+juridicaDTO.getNomefantasia());
+		System.out.println("CNPJ: "+juridicaDTO.getCnpj());
+
 		var pdto = new JuridicaRepository();
 		
 		try {
-			pdto.cadastrar(juridica);
+			pdto.cadastrar(juridicaDTO);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

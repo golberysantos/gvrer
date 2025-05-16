@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org/">
 
 <head>
     <meta charset="UTF-8">
@@ -31,6 +31,13 @@
     </header>
 
     <main>
+    <form action="#"
+    th:action="@{/telaconfiguracaodogrupo/cadastrar}" 
+               th:object="${tipopermissaodogrupo}" 
+               method="post"
+           >
+           
+    
         <h1 class="titulo">configurações de grupos</h1>
         <div class="container">
             <div class="d-flex justify-content-center row">
@@ -359,6 +366,7 @@
                         </div>
                     </div>
                 </div>
+                </form>
     </main>
 
     <footer>

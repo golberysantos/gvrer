@@ -10,12 +10,9 @@ import br.com.gvrer.config.ConexaoConfig;
 import br.com.gvrer.grupo.model.Grupo;
 
 import java.sql.Timestamp;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.util.Locale;
+
 
 @Service
 public class GrupoRepository {
@@ -55,7 +52,6 @@ public class GrupoRepository {
 				System.out.println(rs.getString("nome"));
 			}
 			
-			
 
 			stmt.close(); // Ou use try-with-resources (recomendado). Fechando o recurso (importante!)
 			return 1;
@@ -65,8 +61,6 @@ public class GrupoRepository {
 			return 0;
 		}
 		
-		
-
 	}
 	
 }

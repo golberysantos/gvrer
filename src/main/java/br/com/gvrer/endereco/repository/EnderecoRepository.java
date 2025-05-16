@@ -40,7 +40,7 @@ public class EnderecoRepository {
 				System.out.println(rs.getString("nome"));
 			}
 
-			stmt.close(); // Ou use try-with-resources (recomendado). Fechando o recurso (importante!)
+			stmt.close(); //  use try-with-resources (recomendado). Fechando o recurso (importante!)
 			return 1;
 		} catch (Exception e) {
 			// TODO: handle exception

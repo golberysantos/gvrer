@@ -1,16 +1,8 @@
 package br.com.gvrer.tiposegmento.controller;
 
-import java.sql.SQLException;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-
-import br.com.gvrer.itemrestaurante.model.Itemrestaurante;
-import br.com.gvrer.itemrestaurante.repository.ItemrestauranteRepository;
-import br.com.gvrer.tiposegmento.model.TipoSegmento;
 
 @Controller
 public class TipoSegmentoController {
@@ -19,7 +11,7 @@ public class TipoSegmentoController {
 	public String cadastrar(Model model) {
 		System.out.println("olá ");
 		// model.addAttribute("usuario", new Usuario());
-		return "/tiposegmento/tiposegmento.html";
+		return "/reserva/escolherculinaria.html";
 	}
 	
 }

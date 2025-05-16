@@ -20,11 +20,4 @@ public class SegmentoController {
 		// model.addAttribute("usuario", new Usuario());
 		return "/segmento/segmento.html";
 	}
-
-	@PostMapping("/tiposegmento/cadastrar")
-	public String salvar(@ModelAttribute Segmento segmento, Model model) throws SQLException {		
-		System.out.println("\n");
-		
-		return "/segmento/segmento.htmll";
-}
 }
