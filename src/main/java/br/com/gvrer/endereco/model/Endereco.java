@@ -7,50 +7,47 @@ import org.springframework.data.relational.core.mapping.Table;
 public class Endereco {
 
     @Id
-    private long id;
-
-    private String rua;
-    private String complemento;
+    private long enderecoid;
     private String numero;
-    private String endereco;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getRua() {
-        return rua;
-    }
-
-    public void setRua(String rua) {
-        this.rua = rua;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
-	public String getEndereco() {
-		return endereco;
+    private String complemento;
+    private String referencia;
+    private long pessoa_pessoaid;
+    private long rua_ruaid;
+    
+	public long getEnderecoid() {
+		return enderecoid;
 	}
-
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+	public void setEnderecoid(long enderecoid) {
+		this.enderecoid = enderecoid;
+	}
+	public String getNumero() {
+		return numero;
+	}
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	public String getComplemento() {
+		return complemento;
+	}
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+	public String getReferencia() {
+		return referencia;
+	}
+	public void setReferencia(String referencia) {
+		this.referencia = referencia;
+	}
+	public long getPessoa_pessoaid() {
+		return pessoa_pessoaid;
+	}
+	public void setPessoa_pessoaid(long pessoa_pessoaid) {
+		this.pessoa_pessoaid = pessoa_pessoaid;
+	}
+	public long getRua_ruaid() {
+		return rua_ruaid;
+	}
+	public void setRua_ruaid(long rua_ruaid) {
+		this.rua_ruaid = rua_ruaid;
 	}
 }

@@ -9,35 +9,53 @@
 </head>
 
 <body>
-    <div class="container">
+
+     <div class="container">
         <h2>Vamos criar sua conta corporativa! (Pessoa Jurídica)</h2>
         <p>Para começarmos, preencha os campos:</p>
         <p class="obrigatorio">Campos com (*) são obrigatórios</p>
 
         <form id="signup-form" th:action="@{/juridica/salvar}" th:object="${juridicaDTO}" method="post">
-        
+
             <!-- Representante -->
             <div class="input-group">
                 <label for="nome">Representante da empresa*:</label>
                 <input type="text" id="nome" th:field="*{representante}" required>
             </div>
-            <!-- <div class="input-group">
-                <label for="genero">Função do responsável*:</label>
-                <input type="text" id="nome" th:field="*{funcao}" required>
-            </div> -->
 
             <!-- Pessoa Jurídica -->
             <div class="input-group">
                 <label for="razao-social">Razão Social*:</label>
                 <input type="text" id="razao-social" th:field="*{razaosocial}" required>
             </div>
+
             <div class="input-group">
                 <label for="nome-fantasia">Nome Fantasia*:</label>
                 <input type="text" id="nome-fantasia" th:field="*{nomefantasia}" required>
             </div>
+
             <div class="input-group">
                 <label for="cnpj">CNPJ*:</label>
                 <input type="text" id="cnpj" th:field="*{cnpj}" required pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" placeholder="00.000.000/0000-00">
+            </div>
+
+            <!-- Contato lado a lado -->
+            <div class="input-group contact-group">
+                <div class="field">
+                    <label for="tipo-contato">Tipo de Contato:</label>
+                    <select id="tipo-contato" name="tipo-contato" required>
+                        <option value="">Selecione...</option>
+                        <option value="email">E-mail</option>
+                        <option value="telefone">Telefone</option>
+                        <option value="whatsapp">WhatsApp</option>
+                        <option value="linkedin">LinkedIn</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="contato">Contato:</label>
+                    <input type="text" id="contato" name="contato" required>
+                </div>
             </div>
 
             <button id="button" type="submit">Avançar</button>

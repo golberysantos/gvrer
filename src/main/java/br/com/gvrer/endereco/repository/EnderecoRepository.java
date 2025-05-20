@@ -19,17 +19,19 @@ public class EnderecoRepository {
 		// cnctn.setAutoCommit(false);
 		// Statement stmt = cnctn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
 		// ResultSet.CONCUR_READ_ONLY);
-		endereco.getEndereco();
+		endereco.getNumero();
 
 		try {
 
-			String query = "insert into Endereco"
-					+ "			(rua, Complemento, numeor,)"
-					+ "		value(?, ?, ?, ?, ?, ?, ?)" + ";";
+			String query = "insert into endereco"
+					+ "			(numero, complemento, referencia, pessoa_pessoaid, rua_ruaid)"
+					+ "		value(?, ?, ?, ?, ?)" + ";";
 			PreparedStatement stmt = cnctn.prepareStatement(query);
-			stmt.setString(1, endereco.getRua());
+			stmt.setString(1, endereco.getNumero());
 			stmt.setString(2, endereco.getComplemento());
-			stmt.setString(4, endereco.getNumero());
+			stmt.setString(3, endereco.getReferencia());
+			stmt.setLong(4, 1);
+			stmt.setLong(5, 1);
 		
 
 			int linhasAfetadas = stmt.executeUpdate();
@@ -44,9 +46,10 @@ public class EnderecoRepository {
 			return 1;
 		} catch (Exception e) {
 			// TODO: handle exception
-			// return stmt.executeUpdate(query);
+			System.out.println("ERRO: "+e);
 			return 0;
 		}
 
 	}
 }
+

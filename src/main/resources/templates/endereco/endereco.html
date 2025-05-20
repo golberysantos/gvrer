@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Cadastrar Endereço</title>
     <link rel="stylesheet" href="../static/css/bootstrap/bootstrap5.3.3.min.css">
     <link rel="stylesheet" href="../static/css/header.css">
     <link rel="stylesheet" href="../static/css/footer.css">
@@ -12,6 +12,7 @@
 
 
 </head>
+
 
 <body>
     <header>
@@ -62,33 +63,32 @@
                 <div class="form">
                     <h1>Endereço</h1>
                     <form 
-                    	class="row g-3" 
-                        action="#"
-               th:action="@{/endereco/cadastrar}" 
-               th:object="${endereco}" 
-               method="post"
+                    	class="row g-3 pt-3" 
+                        th:action="@{/endereco/salvar}"
+	                   th:object="${endereco}"
+	                   method="post"
                     >
-                        <div class="col-12">
-                           <label for="nomeRua" class="form-label">Rua</label>
-<input type="text" th:field="*{rua}" placeholder="Rua">
-
-
-                        </div>
-                        <div class="col-12">
-                            <label for="bairro" class="form-label">Complemento</label>
-<input type="text" th:field="*{complemento}" placeholder="Complemento">
+                        <!-- haha-->
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Número: </label>
+                            <input type="text" th:field="*{numero}" name="numero" class="form-control" id="exampleInputEmail1 numero" aria-describedby="emailHelp">
 
                         </div>
-                        <div class="col-12">
-                            <label for="numeroDaCasa" class="form-label">Numero</label>
-<input type="text" th:field="*{numero}" placeholder="Número">
+                         <!-- haha-->
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Complemento: </label>
+                            <input type="text" th:field="*{complemento}"  name="complemento" class="form-control" id="exampleInputEmail1 complemento" aria-describedby="emailHelp">
 
                         </div>
-                        <div class="col-12 pb-2">
-                            <button type="submit" class="btn btn-primary">
-                                <span class="a1">Salvar</span>
-                            </button>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Referência: </label>
+                            <input type="text" th:field="*{referencia}" name="referencia" class="form-control" id="exampleInputEmail1 referencia" aria-describedby="emailHelp">
+
                         </div>
+                        <div class="botao-criar">
+		                  <button type="submit" class="btn btn-outline-dark mb-3">Cadastrar Endereço
+		                  </button>
+		                </div>
                     </form>
                 </div>
 

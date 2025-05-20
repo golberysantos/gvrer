@@ -19,7 +19,7 @@ import org.springframework.context.annotation.ComponentScan;
 		"br.com.gvrer.endereco.controller",
 		"br.com.gvrer.tipopermissaodogrupo.controller",
 		"br.com.gvrer.principal.controller",
-		"br.com.gvrer.links.controller"
+		"br.com.gvrer.reserva.controller"
 		
 })
 public class GvrerApplication {

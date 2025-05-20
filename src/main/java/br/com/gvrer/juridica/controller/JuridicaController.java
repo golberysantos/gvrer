@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import br.com.gvrer.juridica.model.Juridica;
 import br.com.gvrer.juridica.repository.JuridicaRepository;
 import br.com.gvrer.juridica.service.JuridicaDTO;
 
@@ -17,7 +16,7 @@ public class JuridicaController {
 	
 	@GetMapping("/juridica/cadastrar")
 	public String cadastrar(Model model) {
-		model.addAttribute("juridicaDTO", new Juridica());
+		model.addAttribute("juridicaDTO", new JuridicaDTO());
 		return "juridica/dadosjuridica.html";
 	}
 	
@@ -27,6 +26,8 @@ public class JuridicaController {
 		System.out.println("Razão Social: "+juridicaDTO.getRazaosocial());
 		System.out.println("Nome Fantasia: "+juridicaDTO.getNomefantasia());
 		System.out.println("CNPJ: "+juridicaDTO.getCnpj());
+		System.out.println("Tipo de Contato: "+juridicaDTO.getTipodecontato());
+		System.out.println("Contato: "+juridicaDTO.getContato());
 
 		var pdto = new JuridicaRepository();
 		

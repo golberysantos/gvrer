@@ -13,6 +13,10 @@ public class JuridicaDTO {
 	private String razaosocial;
 	private String nomefantasia;
 	private String cnpj;
+	private long tipodecontatoid;
+	private String tipodecontato;
+	private String contato;
+	
 	
 	private long categoriadaempresaid ;
 	private String nomecategoriadaempresa ; 
@@ -60,8 +64,26 @@ public class JuridicaDTO {
 	public String getCnpj() {
 		return cnpj;
 	}
+	public long getTipodecontatoid() {
+		return tipodecontatoid;
+	}
+	public void setTipodecontatoid(long tipodecontatoid) {
+		this.tipodecontatoid = tipodecontatoid;
+	}
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
+	}
+	public String getTipodecontato() {
+		return tipodecontato;
+	}
+	public void setTipodecontato(String tipodecontato) {
+		this.tipodecontato = tipodecontato;
+	}
+	public String getContato() {
+		return contato;
+	}
+	public void setContato(String contato) {
+		this.contato = contato;
 	}
 	public long getCategoriadaempresaid() {
 		return categoriadaempresaid;

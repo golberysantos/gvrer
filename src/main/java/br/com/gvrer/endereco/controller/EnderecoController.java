@@ -9,19 +9,31 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.com.gvrer.endereco.model.Endereco;
-import br.com.gvrer.itemrestaurante.model.Itemrestaurante;
-import br.com.gvrer.itemrestaurante.repository.ItemrestauranteRepository;
+import br.com.gvrer.endereco.repository.EnderecoRepository;
 
 @Controller
 public class EnderecoController {
-	@GetMapping("/endereco/cadastrar")
-	public String cadastrar(Model model) {
-		System.out.println("/endereco/endereco.html");
-		model.addAttribute("endereco", new Endereco());
-		return "/endereco/endereco.html";
-	}
 
-	}
-	
-	
+    // Exibe o formulário
+    @GetMapping("/endereco/cadastrar")
+    public String cadastrar(Model model) {
+        model.addAttribute("endereco", new Endereco());
+        return "endereco/endereco.html"; // ou "endereco/endereco" se estiver usando Thymeleaf
+       	
+    }
 
+    // Recebe os dados do formulário via POST
+    @PostMapping("/endereco/salvar")
+    public String salvar(@ModelAttribute Endereco endereco, Model model) throws SQLException {
+        // Aqui você pode salvar no banco de dados, se tiver um repository
+    	System.out.println("Endereço recebido: " + endereco.getComplemento());
+        System.out.println("Endereço recebido: " + endereco.getReferencia());
+
+        
+        var endr = new EnderecoRepository();
+        endr.criar(endereco);
+        return "home/home.html";
+		
+        
+    }
+}
