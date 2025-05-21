@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/bootstrap/bootstrap5.3.3.min.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/listaItinerario.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <title>Lista de Itinerário</title>
+</head>
+<body>
+    <!--Header Begin-->
+    <header>
+        <nav class="navbar navbar-expand-lg bgColor">
+            <div class="container-fluid">
+              <a class="navbar-brand" th:href="@{/home}">Gvrer</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Início</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Grupos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Itinerários</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Mais
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Cadastrar Grupo</a></li>
+                      <li><a class="dropdown-item" href="#">Cadastrar Itinerário</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    </header>
+    <!--Haeder End-->
+    <!--Main Begin-->
+    <main>
+      <!--Início Carrossel-->
+      <div class="container carrosselAnimado">
+        <div id="carouselExampleCaptions" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../static/img/buenos-aires.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Buenos Aires</h5>
+                <p>Buenos Aires, a vibrante capital da Argentina, é uma cidade cosmopolita e charmosa, conhecida pela sua arquitetura europeia, rica cultura e gastronomia diversificada. É um destino popular para turistas que buscam história, arte, música e sabores autênticos</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../static/img/rj.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Rio de Janeiro</h5>
+                <p>O Rio de Janeiro é uma cidade vibrante e icônica, conhecida por suas praias, montanhas e cultura festiva. É a segunda maior cidade do Brasil, com uma rica história e um importante centro financeiro e de serviços. O Rio é famoso pelo Carnaval, pelo Cristo Redentor e pelo Pão de Açúcar, e é um dos destinos turísticos mais procurados do mundo.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../static/img/bogota.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Bogotá</h5>
+                <p>Bogotá é a capital e maior cidade da Colômbia, um centro de cultura, negócios e governo. A cidade se destaca pela sua mistura de arquitetura moderna e colonial, com áreas históricas como La Candelaria. Bogotá é conhecida por sua rica cultura, gastronomia diversificada e vida noturna vibrante.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <!--Fim Carrossel-->
+      <!--Início bloco 1-->
+      <h1 class="m-1 p-2 bg-titulos"><b>Cidades mais visitadas</b></h1>
+      <div class="card-block-1">
+          <!--1st Card Begin-->
+          <div class="card" style="width: 18rem;">
+              <img src="../static/img/rj.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><b>Rio de Janeiro - Brasil</b></h5>
+                <p class="card-text">
+                  <span class="textoDetalhe">Partindo de São Paulo</span><br>
+                  <b>Ida:</b> 07/03/2025<br>
+                  <b>Volta:</b> 10/03/2025<br>
+                  <span class="textoDetalhe">Ida e Volta</span><br>
+                  <b class="bordaPreco">4x de R$ 120,00</b><br>
+                  <span class="textoDetalhe">A partir de 446*</span>
+                </p>
+                <a href="#" class="btn">Saiba Mais</a>
+              </div>
+          </div>
+          <!--1st Card End-->
+          <!--2nd Card Begin-->
+          <div class="card" style="width: 18rem;">
+              <img src="../static/img/buenos-aires.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><b>Buenos Aires - Argentina</b></h5>
+                <p class="card-text">
+                  <span class="textoDetalhe">Partindo de São Paulo</span><br>
+                  <b>Ida:</b> 07/03/2025<br>
+                  <b>Volta:</b> 10/03/2025<br>
+                  <span class="textoDetalhe">Ida e Volta</span><br>
+                  <b class="bordaPreco">4x de R$ 120,00</b><br>
+                  <span class="textoDetalhe">A partir de 446*</span>
+                </p>
+                <a href="#" class="btn">Saiba Mais</a>
+              </div>
+          </div>
+          <!--2nd Card End-->
+          <!--3th Card Begin-->
+          <div class="card" style="width: 18rem;">
+              <img src="../static/img/bogota.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><b>Bogotá - Colombia</b></h5>
+                <p class="card-text">
+                  <span class="textoDetalhe">Partindo de São Paulo</span><br>
+                  <b>Ida:</b> 07/03/2025<br>
+                  <b>Volta:</b> 10/03/2025<br>
+                  <span class="textoDetalhe">Ida e Volta</span><br>
+                  <b class="bordaPreco">4x de R$ 120,00</b><br>
+                  <span class="textoDetalhe">A partir de 446*</span>
+                </p>
+                <a href="#" class="btn">Saiba Mais</a>
+              </div>
+          </div>
+          <!--3th Card End-->
+          <!--4th Card Begin-->
+          <div class="card" style="width: 18rem;">
+              <img src="../static/img/la paz.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><b>La Paz - Chile</b></h5>
+                <p class="card-text">
+                  <span class="textoDetalhe">Partindo de São Paulo</span><br>
+                  <b>Ida:</b> 07/03/2025<br>
+                  <b>Volta:</b> 10/03/2025<br>
+                  <span class="textoDetalhe">Ida e Volta</span><br>
+                  <b class="bordaPreco">4x de R$ 120,00</b><br>
+                  <span class="textoDetalhe">A partir de 446*</span>
+                </p>
+                <a href="#" class="btn">Saiba Mais</a>
+              </div>
+          </div>
+          <!--4th Card End-->
+      </div>
+      <hr>
+      <!--Fim bloco 1-->
+      <!--Início bloco 2-->
+      <h1 class="m-1 p-2 bg-titulos"><b>Cidades para o inverno</b></h1>
+      <div class="card-block-1">
+          <!--1st Card Begin-->
+          <div class="card" style="width: 18rem;">
+              <img src="../static/img/rj.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><b>Rio de Janeiro - Brasil</b></h5>
+                <p class="card-text">
+                  <span class="textoDetalhe">Partindo de São Paulo</span><br>
+                  <b>Ida:</b> 07/03/2025<br>
+                  <b>Volta:</b> 10/03/2025<br>
+                  <span class="textoDetalhe">Ida e Volta</span><br>
+                  <b class="bordaPreco">4x de R$ 120,00</b><br>
+                  <span class="textoDetalhe">A partir de 446*</span>
+                </p>
+                <a href="#" class="btn">Saiba Mais</a>
+              </div>
+          </div>
+          <!--1st Card End-->
+          <!--2nd Card Begin-->
+          <div class="card" style="width: 18rem;">
+              <img src="../static/img/buenos-aires.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><b>Buenos Aires - Argentina</b></h5>
+                <p class="card-text">
+                  <span class="textoDetalhe">Partindo de São Paulo</span><br>
+                  <b>Ida:</b> 07/03/2025<br>
+                  <b>Volta:</b> 10/03/2025<br>
+                  <span class="textoDetalhe">Ida e Volta</span><br>
+                  <b class="bordaPreco">4x de R$ 120,00</b><br>
+                  <span class="textoDetalhe">A partir de 446*</span>
+                </p>
+                <a href="#" class="btn">Saiba Mais</a>
+              </div>
+          </div>
+          <!--2nd Card End-->
+          <!--3th Card Begin-->
+          <div class="card" style="width: 18rem;">
+              <img src="../static/img/bogota.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><b>Bogotá - Colombia</b></h5>
+                <p class="card-text">
+                  <span class="textoDetalhe">Partindo de São Paulo</span><br>
+                  <b>Ida:</b> 07/03/2025<br>
+                  <b>Volta:</b> 10/03/2025<br>
+                  <span class="textoDetalhe">Ida e Volta</span><br>
+                  <b class="bordaPreco">4x de R$ 120,00</b><br>
+                  <span class="textoDetalhe">A partir de 446*</span>
+                </p>
+                <a href="#" class="btn">Saiba Mais</a>
+              </div>
+          </div>
+          <!--3th Card End-->
+          <!--4th Card Begin-->
+          <div class="card" style="width: 18rem;">
+              <img src="../static/img/la paz.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><b>La Paz - Chile</b></h5>
+                <p class="card-text">
+                  <span class="textoDetalhe">Partindo de São Paulo</span><br>
+                  <b>Ida:</b> 07/03/2025<br>
+                  <b>Volta:</b> 10/03/2025<br>
+                  <span class="textoDetalhe">Ida e Volta</span><br>
+                  <b class="bordaPreco">4x de R$ 120,00</b><br>
+                  <span class="textoDetalhe">A partir de 446*</span>
+                </p>
+                <a href="#" class="btn">Saiba Mais</a>
+              </div>
+          </div>
+          <!--4th Card End-->
+      </div>
+      <hr>
+      <!--Fim bloco 2-->
+    </main>
+    <!--Main End-->
+    <!--Footer Begin-->
+    <footer>
+        <div class="text-center footerbgColor p-3">
+            <p>&copy;By Vini</p>
+        </div>
+    </footer>
+    <!--Footer End-->
+    <script src="../static/js/bootstrap/bootstrap5.3.3.bundle.min.js">
+
+    </script>
+</body>
+</html>

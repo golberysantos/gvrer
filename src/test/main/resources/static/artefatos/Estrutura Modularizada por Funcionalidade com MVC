@@ -1,0 +1,63 @@
+
+Estrutura Modularizada por Funcionalidade com MVC
+
+	Cada funcionalidade tem sua própria estrutura MVC, encapsulando todos os componentes necessários para essa funcionalidade específica.
+
+br.com.giben
+    ├── customer
+    │   ├── model
+    │   │   └── Customer.java
+    │   ├── controller
+    │   │   └── CustomerController.java
+    │   ├── service
+    │   │   └── CustomerService.java
+    │   └── repository
+    │       └── CustomerRepository.java
+    └── product
+        ├── model
+        │   └── Product.java
+        ├── controller
+        │   └── ProductController.java
+        ├── service
+        │   └── ProductService.java
+        └── repository
+            └── ProductRepository.java
+
+            
+
+DEFINIÇÃO DOS NOMES DOS PACOTES 
+
+Controller: Responsável por lidar com as requisições HTTP, interagir com os serviços e preparar os dados para a view.
+   - Exemplo: `com.seuapp.modulo.controller`
+
+Service: Contém as regras de negócio da aplicação. É onde ocorre a lógica de processamento e as operações que manipulam os dados, incluindo interações com APIs externas e manipulação de DTOs. Dentro do pacote com.seuapp.modulo.service, você poderia ter classes como:
+    - ApiService: Responsável por realizar chamadas e interações com APIs externas.
+    - DtoMapper: Classe para mapear DTOs de entrada e saída.
+    - Outras classes auxiliares para lidar com transformações de dados e operações específicas relacionadas à interação com APIs. Exemplo: 
+	`com.seuapp.modulo.service`
+
+Model: Representa as entidades do domínio da aplicação, ou seja, as classes que representam dados que são manipulados pela aplicação. Exemplo de nome do pacote: 
+	`com.nomeapp.nomemodulo.model`
+
+Repository (ou DAO - Data Access Object): Faz a interação com a camada de persistência de dados (banco de dados, por exemplo). Exemplo: 
+	`com.seuapp.modulo.repository`
+
+Config: Contém as configurações específicas do Spring (como beans, configurações de segurança, etc.). Exemplo:
+	`com.seuapp.modulo.config`
+	Seguindo o padrão MVC (Model-View-Controller), as classes de configuração de segurança geralmente são colocadas no pacote (package) chamado config. Este é um nome comummente utilizado para agrupar classes de configuração que definem aspectos relacionados à segurança, como configurações de autenticação, autorização, filtros de segurança, entre outros.
+Domain: contém as classes de domínio. O termo "domínio", refere-se ao problema ou área de conhecimento para a qual a aplicação está sendo desenvolvida. Por exemplo, em um sistema de gerenciamento de biblioteca, as classes como Livro, Autor, Cliente, Empréstimo, etc., são consideradas classes de domínio. Características de uma "domain class" em Java incluem:
+    Representação de Conceitos do Domínio: A classe encapsula dados e comportamentos que são relevantes para o domínio específico da aplicação. Por exemplo, a classe Livro pode ter atributos como título, autor, ano de publicação, etc., e métodos para consultar e modificar esses atributos.
+    Abstração dos Dados: Ela abstrai as entidades do mundo real ou conceitos do problema que a aplicação está resolvendo. Isso geralmente significa que as classes de domínio refletem estruturas e relações que são familiares para os usuários finais da aplicação.
+    Independência da Lógica de Aplicação: As classes de domínio devem se concentrar principalmente na representação de dados e no comportamento associado a esses dados, em vez de conter lógica de negócios complexa ou de infraestrutura.
+    Persistência de Dados: Muitas vezes, as classes de domínio estão intimamente ligadas à persistência de dados, ou seja, à maneira como os dados são armazenados e recuperados em um banco de dados ou outro meio de armazenamento.
+
+NOTAS
+	Dentro do pacote `com.seuapp.modulo`, você teria esses subpacotes para organizar melhor o código da sua aplicação.
+As regras de negócio seriam implementadas nos serviços (`com.seuapp.modulo.service`). Isso mantém a separação de responsabilidades entre as camadas do MVC:
+Seguindo o princípio SOLID, em particular o princípio da Responsabilidade Única (Single Responsibility Principle - SRP), as classes que têm a responsabilidade de validar dados devem ser colocadas em um pacote específico que respeite essa responsabilidade singular.
+No contexto de uma aplicação Java com Spring MVC e seguindo a estruturação por módulos, uma abordagem comum seria criar um pacote dedicado para validação dentro da camada de serviço (ou service). Isso porque a validação de dados pode ser vista como parte do processo de negócios e, portanto, pertence à camada de serviço, onde são implementadas as regras de negócio da aplicação. Exemplo:
+com.seuapp.modulo.service.validation
+|-- DataValidator
+|-- UserValidator
+|-- etc.  
+            

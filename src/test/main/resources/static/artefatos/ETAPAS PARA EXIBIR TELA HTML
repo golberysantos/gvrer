@@ -1,0 +1,34 @@
+
+ETAPAS PARA EXIBIR TELA HTML
+
+1. setar o thymeleaf no html
+	xmlns:th="http://www.thymeleaf.org"
+	
+2. criar pakage model e controller
+
+3. configurar o controller
+	- marcar a anotação, por exemplo, @Controller, @GetMapping, @PostMapping
+	- incluir o nome do pakage no @ComponentScan({"",""}) na class main
+4. configurar a model
+	Observação:
+		Usar o tipo long para id
+		Usar o tipo String para data
+		Aplicar anotação @Table para a classe model
+		Aplicar anotação @Id para a propriedade id
+
+		Exemplos:
+
+		@Table("fisica")
+		public class Fisica {
+			@Id
+			private long fisicaid;
+		}
+
+
+localhost:8080/usuario
+
+
+- exibir o formulário pelo controller
+- pegar os dados do formulário pelo Controller
+- validar os dados (repository)
+- armazer os dados no banco de dados (services)

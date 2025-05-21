@@ -26,4 +26,9 @@ public class TipoSegmento {
 		this.nometiposegmento = nometiposegmento;
 	}
 
+	public String getCulinaria() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta Corporativa Pt.I</title>
+    <link rel="stylesheet" href="../../static/css/dados_da_empresa/empresadados1.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Vamos criar sua conta corporativa!</h2>
+        <p>Preencha os campos:</p>
+        <p class="obrigatorio">Campos com (*) são obrigatórios</p>
+
+        <form id="signup-form" th:action="@{/juridica/salvar}" th:object="${juridica}" method="post">
+            <!-- Responsável -->
+            <div class="input-group">
+                <label for="nome">Nome completo do responsável*:</label>
+                <input type="text" id="nome" th:field="*{nomeresponsavel}" required>
+            </div>
+            <div class="input-group">
+                <label for="data-nascimento">Data de nascimento*:</label>
+                <input type="date" id="data-nascimento" th:field="*{datanascimento}" required>
+            </div>
+            <div class="input-group">
+                <label for="genero">Sexo*:</label>
+                <select id="genero" th:field="*{sexo}" required>
+                    <option value="">Selecione</option>
+                    <option th:value="Masculino" th:text="Masculino">Masculino</option>
+                    <option th:value="Feminino" th:text="Feminino">Feminino</option>
+                    <option th:value="Outro" th:text="Outro">Outro</option>
+                </select>
+            </div>
+
+            <!-- Pessoa Jurídica -->
+            <div class="input-group">
+                <label for="razao-social">Razão Social*:</label>
+                <input type="text" id="razao-social" th:field="*{razaosocial}" required>
+            </div>
+            <div class="input-group">
+                <label for="nome-fantasia">Nome Fantasia*:</label>
+                <input type="text" id="nome-fantasia" th:field="*{nomefantasia}" required>
+            </div>
+            <div class="input-group">
+                <label for="cnpj">CNPJ*:</label>
+                <input type="text" id="cnpj" th:field="*{cnpj}" required pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" placeholder="00.000.000/0000-00">
+            </div>
+
+            <button id="button" type="submit">Avançar</button>
+        </form>
+
+        <div class="info-do-app">
+            <img src="../static/img/travelservtitle.png" alt="TravelServ Logo">
+            <p class="desenvolvedor">Desenvolvido pela<br> Patrono Tech</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

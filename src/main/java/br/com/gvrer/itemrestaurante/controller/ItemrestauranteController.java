@@ -17,7 +17,7 @@ public class ItemrestauranteController {
 	public String cadastrar(Model model) {
 		System.out.println("/cardapio/itemrestaurante.html ");
 		model.addAttribute("itemrestaurante", new Itemrestaurante());
-		return "/cardapio/itemrestaurante.html";
+		return "/itinerario/listaItinerario.html";
 	}
 	
 	@PostMapping("/itemrestaurante/salvar")

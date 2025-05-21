@@ -5,18 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
-  <link rel="stylesheet" href="../static/css/bootstrap/bootstrap5.3.3.min.css" />
-  <link rel="stylesheet" href="../static/css/boxicons/boxicons.2.1.4.min.css" />
-  <link rel="stylesheet" href="../static/css/header.css" />
-  <link rel="stylesheet" href="../static/css/footer.css" />
-  <link rel="stylesheet" href="../static/css/home.css" />
+  <link rel="stylesheet" href="../../static/css/bootstrap/bootstrap5.3.3.min.css" />
+  <link rel="stylesheet" href="../../static/css/boxicons/boxicons.2.1.4.min.css" />
+  <link rel="stylesheet" href="../../static/css/header.css" />
+  <link rel="stylesheet" href="../../static/css/footer.css" />
+  <link rel="stylesheet" href="../../static/css/home.css" />
 </head>
 
 <body>
   <header>
     <nav class="navbar navbar-expand-lg headerBgColor">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../home/home.html">Gvrer</a>
+        <a class="navbar-brand" href="#">Gvrer</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -49,6 +49,9 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" th:href="@{/usuario/cadastrar}">Cadastrar-se</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" th:href="@{/itemrestaurante/cadastrar}">Início</a>
                 </li>
                 <li>
                   <hr class="dropdown-divider" />
@@ -98,7 +101,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="col-12 imgCentralizado">
-              <img src="../static/img/reservarrestaurante1.jpg" class="d-block w-100" alt="..." />
+              <img src="../../static/img/reservarrestaurante1.jpg" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-caption d-md-block">
               <h5>Reserva de restaurante</h5>
@@ -108,7 +111,7 @@
 
           <div class="carousel-item">
             <div class="col-12 imgCentralizado">
-              <img src="../static/img/reservarrestaurante2.jpg" class="d-block w-100" alt="..." />
+              <img src="../../static/img/reservarrestaurante2.jpg" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-caption d-md-block">
               <h5>Reserva de restaurante</h5>
@@ -120,7 +123,7 @@
 
           <div class="carousel-item">
             <div class="col-12 imgCentralizado">
-              <img src="../static/img/viajaememgrupo0.jpg" class="d-block w-100" alt="..." />
+              <img src="../../static/img/viajaememgrupo0.jpg" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-caption d-md-block">
               <h5>Third slide label</h5>
@@ -166,8 +169,8 @@
     </div>
   </footer>
 
-  <script src="../static/js/boxicons/boxicons.2.1.4.min.js"></script>
-  <script src="../static/js/bootstrap/bootstrap5.3.3.bundle.min.js"></script>
+  <script src="../../static/js/boxicons/boxicons.2.1.4.min.js"></script>
+  <script src="../../static/js/bootstrap/bootstrap5.3.3.bundle.min.js"></script>
 </body>
 
 </html>

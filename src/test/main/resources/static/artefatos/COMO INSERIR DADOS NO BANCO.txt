@@ -1,0 +1,103 @@
+
+/*-----------------------
+-- COMO INSERIR DADOS
+-------------------------/* 
+
+
+
+
+
+@Controller
+public class MeucontroladorController {
+
+	@GetMapping("/cadprojeto")
+	public String cadprojeto(Model Model) {
+		Model.addAttribute("projeto", new Projeto());
+		return "/cadprojeto/cadprojeto.html";
+	}
+
+
+	@PostMapping("/cadprojeto/salvar")
+	public String salvar(@ModelAttribute Projeto projeto, Model model) {
+		model.addAttribute("projeto", projeto);
+
+		System.out.println(
+				"\n\nNome do projeto: " + projeto.getNomeprojeto() + "\nDescrição: " + projeto.getDescricaoprojeto());
+
+		try {
+
+			CadProjetoService cdp = new CadProjetoService();
+			cdp.criar(projeto);
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "/cadprojeto/cadprojeto.html";
+
+		}
+		return "/cadprojeto/cadprojeto.html";
+		/*
+		 * Ao cadastrar um novo projeto deve-se abrir uma tela de confirmação. Nessa tela deve-se ter opções de novo cadastro, ir para a tela principal.
+		 * */
+	}
+}
+
+
+
+@Service
+public class CadProjetoService {
+
+	public int criar(Projeto projeto) throws SQLException {
+
+		ConexaoConfig cnx = new ConexaoConfig();
+		Connection cnctn = cnx.conectar();
+		// cnctn.setAutoCommit(false);
+		Statement stmt = cnctn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+
+		String query = "insert into projeto\r\n" + "(nomeprojeto, descricaoprojeto, qtdparticipantes)\r\n" + "value\r\n"
+				+ "('" + projeto.getNomeprojeto() + "', '" + projeto.getDescricaoprojeto() + "', '"
+				+ projeto.getQtdparticipantes() + "')";
+
+		return stmt.executeUpdate(query);
+
+	}
+
+}
+
+
+
+7 Creating a Form
+7.1 Handling the command object
+
+Command object is the name Spring MVC gives to form-backing beans, this is, to objects that model a form’s fields and provide getter and setter methods that will be used by the framework for establishing and obtaining the values input by the user at the browser side.
+
+Thymeleaf requires you to specify the command object by using a th:object attribute in your <form> tag:
+
+<form action="#" th:action="@{/seedstartermng}" th:object="${seedStarter}" method="post">
+    ...
+</form>
+
+This is consistent with other uses of th:object, but in fact this specific scenario adds some limitations in order to correctly integrate with Spring MVC’s infrastructure:
+
+    Values for th:object attributes in form tags must be variable expressions (${...}) specifying only the name of a model attribute, without property navigation. This means that an expression like ${seedStarter} is valid, but ${seedStarter.data} would not be.
+    Once inside the <form> tag, no other th:object attribute can be specified. This is consistent with the fact that HTML forms cannot be nested.
+
+7.2 Inputs
+
+Let’s see now how to add an input to our form:
+
+<input type="text" th:field="*{datePlanted}" />
+
+As you can see, we are introducing a new attribute here: th:field. This is a very important feature for Spring MVC integration because it does all the heavy work of binding your input with a property in the form-backing bean. You can see it as an equivalent of the path attribute in a tag from Spring MVC’s JSP tag library.
+
+The th:field attribute behaves differently depending on whether it is attached to an <input>, <select> or <textarea> tag (and also depending on the specific type of <input> tag). In this case (input[type=text]), the above line of code is similar to:
+
+<input type="text" id="datePlanted" name="datePlanted" th:value="*{datePlanted}" />
+
+…but in fact it is a little bit more than that, because th:field will also apply the registered Spring Conversion Service, including the DateFormatter we saw before (even if the field expression is not double-bracketed). Thanks to this, the date will be shown correctly formatted.
+
+Values for th:field attributes must be selection expressions (*{...}), which makes sense given the fact that they will be evaluated on the form-backing bean and not on the context variables (or model attributes in Spring MVC jargon).
+
+Contrary to the ones in th:object, these expressions can include property navigation (in fact any expression allowed for the path attribute of a <form:input> JSP tag will be allowed here).
+
+Note that th:field also understands the new types of <input> element introduced by HTML5 like <input type="datetime" ... />, <input type="color" ... />, etc., effectively adding complete HTML5 support to Spring MVC.
