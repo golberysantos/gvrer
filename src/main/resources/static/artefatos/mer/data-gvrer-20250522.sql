@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: gvrer
+-- Host: localhost    Database: gvrer
 -- ------------------------------------------------------
--- Server version	8.3.0
+-- Server version	9.2.0
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -41,15 +41,6 @@ UNLOCK TABLES;
 LOCK TABLES `categoriaitemrestaurante` WRITE;
 /*!40000 ALTER TABLE `categoriaitemrestaurante` DISABLE KEYS */;
 INSERT INTO `categoriaitemrestaurante` VALUES (1,'BEBIDA'),(2,' Entradas'),(3,'Pratos Principais'),(4,'Acompanhamentos'),(5,'Sobremesas');
-/*!40000 ALTER TABLE `categoriaitemrestaurante` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `categoriaitemrestaurante`
---
-
-LOCK TABLES `categoriaitemrestaurante` WRITE;
-/*!40000 ALTER TABLE `categoriaitemrestaurante` DISABLE KEYS */;
 /*!40000 ALTER TABLE `categoriaitemrestaurante` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,6 +210,15 @@ INSERT INTO `juridica` VALUES (1,'TechNova Soluções em Tecnologia LTDA','TechN
 UNLOCK TABLES;
 
 --
+-- Dumping data for table `juridica_itemrestaurante`
+--
+
+LOCK TABLES `juridica_itemrestaurante` WRITE;
+/*!40000 ALTER TABLE `juridica_itemrestaurante` DISABLE KEYS */;
+/*!40000 ALTER TABLE `juridica_itemrestaurante` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping data for table `logdogrupo`
 --
 
@@ -315,15 +315,6 @@ LOCK TABLES `reservaitem` WRITE;
 UNLOCK TABLES;
 
 --
--- Dumping data for table `reservaitem`
---
-
-LOCK TABLES `reservaitem` WRITE;
-/*!40000 ALTER TABLE `reservaitem` DISABLE KEYS */;
-/*!40000 ALTER TABLE `reservaitem` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Dumping data for table `rua`
 --
 
@@ -399,4 +390,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-20 21:23:08
+-- Dump completed on 2025-05-22 23:02:47
